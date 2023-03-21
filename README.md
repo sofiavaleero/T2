@@ -71,6 +71,7 @@ Inserte a continuación una captura de pantalla que muestre el resultado de ejec
 *verbosa*, de manera que se muestre el resultado de la ejecución de los tests unitarios.
 
 <img src="tests.png" width="480" align="center">
+<img src="tests2.png" width="480" align="center">
 
 #### Código desarrollado
 
@@ -162,6 +163,28 @@ def mcd(numero1, numero2):
     for factor in dicFact1 | dicFact2:
         mcd *= factor ** min(dicFact1[factor], dicFact2[factor])
     return mcd
+
+def mcmN(*numeros):
+    """
+    >>> mcmN(42, 60, 70, 63)
+    1260
+    """
+    mcmN = numeros[1]
+    for x in range(1, len(numeros)):
+        mcmN = mcm(mcmN, numeros[x])
+
+    return mcmN
+
+def mcdN(*numeros):
+    """
+    >>> mcdN(820, 630, 1050, 1470)
+    210
+    """
+    mcdN = numeros[1]
+    for x in range(1, len(numeros)):
+        mcdN = mcd(mcdN, numeros[x])
+
+    return mcdN
 
 
 import doctest
